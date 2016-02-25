@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="clocks">
+<head>
+    <title>This Title!</title>
+
+	<!--styles-->
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!--angular-->
+	<script src="app/angular/angular.min.js"></script>
+	<script src="app/angular/angular-route.js"></script>
+	<!--app-->
+	<script src="app/app.js"></script>
+	<!--controllers-->
+	<script src="app/controllers/clockCtrl.js"></script>
+	<script src="app/controllers/addCtrl.js"></script>
+	<script src="app/controllers/projectCtrl.js"></script>
+	<!--services-->
+	<script src="app/services/dbSrvc.js"></script>
+
+</head>
+<body ng-controller="clockCtrl">
+    <div id="admin-panel" class="navbar-inverse">
+		<div class="row">
+			<div class="col-sm-12">
+				<header class="col-sm-12">
+					<h1 class="text-center"><a href="http://localhost/angular-ci/">Clockish</a></h1>
+					<p class="text-muted text-center">(Working title...)</p>
+					<p class="text-muted">A time-tracking app built in Bootstrap 3, AngularJS, and CodeIgniter</p>
+				</header>
+				<strong class="add-button" ng-click="addNew()">Add New Project</strong>
+				<strong class="add-button" ng-click="editProjects()" ng-hide="removeProjects">Edit Projects</strong>
+				<strong class="add-button" ng-click="cancelEdit()" ng-show="removeProjects">Done Editing</strong>
+				<strong class="">Your Projects</strong>
+				<nav class="nav">
+					<ul>
+						<li class="text-center" ng-repeat="project in projects">
+							<button class="remove-button" ng-show="removeProjects" ng-click="remove(project)">-</button>
+							<a href="http://localhost/angular-ci/#/project/{{project.id}}" ng-class="{removable: removeProjects}">
+								{{project.title}}
+							</a>
+							<strong ng-show="project.remove">Are you sure?&nbsp;&nbsp;<a class="btn btn-danger btn-sm" ng-click="deleteProject(project.id, $index)">Yes</a> <a class="btn btn-default btn-sm" ng-click="cancelThisEdit(project)">No</a></strong>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+    </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-10 col-sm-push-1">
+				<div id="content-area">
+					<ng-view></ng-view>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+html {
+	height: 100%;
+	position: relative;
+}
+@media (min-width: 769px) {
+	body {
+		padding-left: 325px;
+		position: relative;
+		height: 100%;
+	}
+}
+
+/*Styling the admin panel*/
+#admin-panel {
+	width: 100%;
+	color: #ffffff;
+	text-align: center;
+}
+@media (min-width: 769px) {
+	#admin-panel {
+		width: 325px;
+		position: fixed;
+		height: 100%;
+		left: 0;
+		padding-top: 2em;
+		text-align: left;
+	}
+}
+#admin-panel header {
+	display: block;
+	float: none;
+}
+#admin-panel p {
+	font-size: 16px;
+	margin-bottom: 1.5em;
+}
+#admin-panel strong {
+	display: block;
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+.add-button {
+	border-top: 1px solid #000000;
+}
+.add-button:hover {
+	background-color: #000000;
+	cursor: pointer;
+}
+nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+nav li {
+	position: relative;
+}
+nav li .remove-button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 51px;
+	height: 51px;
+	background-color: darkred;
+	color: #ffffff;
+	border: 1px solid #000000;
+	font-size: 3rem;
+	-webkit-transition: 100ms;
+	-moz-transition: 100ms;
+	-ms-transition: 100ms;
+	-o-transition: 100ms;
+	transition: 100ms;
+}
+nav li .remove-button:hover {
+	background-color: red;
+}
+
+nav li a {
+	color: #ffffff;
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000000;
+	cursor: pointer;
+	background-color: #222222;
+}
+nav li a.removable {
+	margin-left: 51px;
+}
+nav li a:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+nav li a:first-child {
+	border-top: 1px solid #000000;
+}
+
+/*Styling content*/
+#content-area {
+	padding-top: 3em;
+}
+
+/*Project Submission Form*/
+label {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+/*View Project*/
+#timer {
+	font-family: courier, monospace;
+	font-size: 6em;
+}
+.ultralight {
+	color: #CCCCCC;
+}
+.unit {
+	font-size: 2rem;
+	font-weight: normal;
+}
